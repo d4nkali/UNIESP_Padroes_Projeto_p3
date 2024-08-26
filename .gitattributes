@@ -1,0 +1,5 @@
+# Convertendo para lf
+
+*.md eol=lf
+*.txt eol=lf
+*.java eol=lf
