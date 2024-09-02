@@ -27,7 +27,7 @@ public class Quest1067 {
 
 		for (int i = 0; i <= ValorTwitter; i++) {
 
-			if (i % 2 != 0) {
+			if (i % 2 != 0 && i > 1 && i < 1000) {
 
 				System.out.println(i);
 
