@@ -1,5 +1,7 @@
 package tech.d4nkali.contas;
 
-public class ContaEspecial {
+public class ContaEspecial extends Conta {
+
+	double limite;
 
 }

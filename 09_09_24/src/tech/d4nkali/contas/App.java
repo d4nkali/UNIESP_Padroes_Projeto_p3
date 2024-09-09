@@ -6,7 +6,7 @@ public class App {
         //* Criando objetos
 
 		//Conta conta1 = new Conta(); 
-		Conta conta2 = new Conta(02, "Oswaldo", 5000000, 80000);
+		Conta conta2 = new Conta(02, "Oswaldo", 5000000);
 
 		// Utilização dos estados
 
