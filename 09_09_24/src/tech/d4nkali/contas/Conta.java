@@ -3,7 +3,6 @@ package tech.d4nkali.contas;
 public class Conta {
 
 	int numero;
-	String nome;
 	double saldo;
 
 	boolean sacar (double quantidade) {
@@ -43,11 +42,10 @@ public class Conta {
 
 	}
 
-	public Conta(int numero, String nome, double saldo) {
+	public Conta(int numero, double saldo) {
 
 		System.out.println("Objeto PREENCHIDO criado");
 		this.numero = numero;
-		this.nome = nome;
 		this.saldo = saldo;
 
 	}
