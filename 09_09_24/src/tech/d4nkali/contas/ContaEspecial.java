@@ -12,4 +12,20 @@ public class ContaEspecial extends Conta {
 		this.limite = limite;
 	}
 
+	boolean sacar (double quantidade) {
+
+		if (this.saldo < quantidade) {
+			return false;
+		}
+
+		else {
+
+			double novoSaldo = this.saldo - (quantidade * 0.99);
+			this.saldo = novoSaldo;
+			return true;
+
+		}
+
+	}
+
 }
