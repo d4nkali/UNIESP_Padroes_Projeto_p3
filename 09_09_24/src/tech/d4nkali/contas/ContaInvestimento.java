@@ -36,4 +36,10 @@ public class ContaInvestimento extends Conta{
 
 	}
 
+	void aplicarRendimento(double taxa) {
+
+		this.saldo += saldo * taxa / 100; 
+
+	}
+
 }
