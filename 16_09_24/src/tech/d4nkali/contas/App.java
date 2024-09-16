@@ -1,17 +1,26 @@
 package tech.d4nkali.contas;
+
+import java.util.Scanner;
+
 public class App {
 
     public static void main(String[] args) throws Exception {
 
         //* Criando objetos
 
-		//Conta conta1 = new Conta(); 
+		Conta conta1 = new Conta(01,0); 
 		Conta conta2 = new Conta(02, 5000000);
 		ContaEspecial ContaE1 = new ContaEspecial();
 		ContaInvestimento ContaI1 = new ContaInvestimento();
+		Scanner sc = new Scanner(System.in); 
+		
+		double valor;
 
 		// Utilização dos estados
 
+			System.out.print("Informe o valor inicial de deposito: ");
+			valor = sc.nextDouble();
+			conta1.depositar(valor);
 			//conta1.limite = 100000;
 			//conta1.saldo = 50000;
 			//conta1.nome = "Junin do Carro";
@@ -22,6 +31,8 @@ public class App {
 		ContaE1.sacar(900);
 		ContaI1.sacar(1122);
 		ContaI1.depositar(50000);
+
+		sc.close();
 
     }
 
