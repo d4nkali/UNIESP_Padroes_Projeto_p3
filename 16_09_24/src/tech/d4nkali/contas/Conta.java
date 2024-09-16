@@ -3,7 +3,7 @@ package tech.d4nkali.contas;
 public class Conta {
 
 	private int numero;
-	protected double saldo;
+	private double saldo;
 
 	boolean sacar (double quantidade) {
 

@@ -2,30 +2,23 @@ package tech.d4nkali.contas;
 
 public class ContaEspecial extends Conta {
 
-	double limite;
+	private double limite;
 
-	public double getLimite() {
-		return limite;
-	}
+	public boolean sacar (double quantidade) {
 
-	public void setLimite(double limite) {
-		this.limite = limite;
-	}
+			double QtdEspecial = quantidade * 0.99;
+			return super.sacar(QtdEspecial);
 
-	boolean sacar (double quantidade) {
-
-		if (this.saldo < quantidade) {
-			return false;
-		}
-
-		else {
-
-			double novoSaldo = this.saldo - (quantidade * 0.99);
-			this.saldo = novoSaldo;
-			return true;
-
-		}
+		
 
 	}
+
+    public double getLimite() {
+        return limite;
+    }
+
+    public void setLimite(double limite) {
+        this.limite = limite;
+    }
 
 }

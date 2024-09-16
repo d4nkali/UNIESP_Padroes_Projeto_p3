@@ -2,44 +2,41 @@ package tech.d4nkali.contas;
 
 public class ContaInvestimento extends Conta{
 
-	double taxa;
-	int prazo;
+	private double taxa;
+	private int prazo;
 
-	boolean sacar (double quantidade) {
+	public boolean sacar (double quantidade) {
 
-		if (this.saldo < quantidade) {
-			return false;
-		}
-
-		else {
-
-			double novoSaldo = this.saldo - quantidade * 1.01;
-			this.saldo = novoSaldo;
-			return true;
-
-		}
+		return super.sacar(quantidade * 1.01);
 
 	}
 
-	boolean depositar (double quantidade) {
+	public boolean depositar (double quantidade) {
 
-		if (quantidade == 0 || quantidade < 0) {
-			return false;
-		}
-
-		else {
-
-			this.saldo = this.saldo + quantidade * 0.01;
-			return true;
-
-		}
+			return super.depositar(quantidade * 1.01);
 
 	}
 
-	void aplicarRendimento(double taxa) {
+	public void aplicarRendimento(double taxa) {
 
-		this.saldo += saldo * taxa / 100; 
+		super.depositar(getSaldo() * taxa / 100);
 
+	}
+
+	public double getTaxa() {
+		return taxa;
+	}
+
+	public void setTaxa(double taxa) {
+		this.taxa = taxa;
+	}
+
+	public int getPrazo() {
+		return prazo;
+	}
+
+	public void setPrazo(int prazo) {
+		this.prazo = prazo;
 	}
 
 }
