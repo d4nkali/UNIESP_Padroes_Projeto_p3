@@ -1,5 +1,7 @@
 package tech.d4nkali.composicao;
 
+import java.util.Scanner;
+
 public class Endereco {
 
 	private String rua;
@@ -8,6 +10,8 @@ public class Endereco {
 	private String cidade;
 	private String estado;
 	private String pais;
+
+	Scanner sc2 = new Scanner(System.in);
 
 	public String getRua() {
 		return rua;
@@ -44,6 +48,27 @@ public class Endereco {
 	}
 	public void setPais(String pais) {
 		this.pais = pais;
+	}
+	public void cadastrar() {
+
+		System.out.print("Informe a rua: ");
+		this.rua = sc2.nextLine();
+
+		System.out.print("Informe o numero da rua: ");
+		this.numero = sc2.nextLine();
+
+		System.out.print("Informe o CEP: ");
+		this.cep = sc2.nextLine();
+
+		System.out.print("Informe a cidade: ");
+		this.cidade = sc2.nextLine();
+
+		System.out.print("Informe o estado: ");
+		this.estado = sc2.nextLine();
+
+		System.out.print("Informe o pais: ");
+		this.pais = sc2.nextLine();
+
 	}
 
 }

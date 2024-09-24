@@ -7,8 +7,8 @@ public class App {
     public static void main(String[] args) throws Exception {
 
 		Pessoa pessoa1 = new Pessoa();
-		String nome = "Angelo";
-		String endereco = "Rua Existe";
+
+		pessoa1.cadastrar();
 
 		// Cadastrar Clientes
 
