@@ -2,9 +2,11 @@ package tech.d4nkali.pessoas;
 
 import tech.d4nkali.composicao.Profissao;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Cliente extends Pessoa{
+
     private String codigo;
     private Profissao profissao;
     private String tipoProfissaoOutros;
@@ -37,7 +39,60 @@ public class Cliente extends Pessoa{
             this.tipoProfissaoOutros = leitor.nextLine();
         }
 
+
     }
+
+	public void atualizaInformacoes() {
+
+		System.out.println("Deseja atualiza as informações? (S/n) ");
+		String respostaAtt = leitor.nextLine();
+
+		if (respostaAtt.equalsIgnoreCase("S")) {
+
+			System.out.println("Qual o novo nome: ");
+			setNome(leitor.nextLine());
+			System.out.print("Qual a nova profissao: ");
+			setProfissao(Profissao.valueOf(leitor.nextLine()));
+
+			System.out.print("Deseja atualizar a data de nascimento? (S/n) ");
+
+			if (respostaAtt.equalsIgnoreCase("S")) {
+
+				System.out.print("Informe o dia de nascimento: ");
+				int dia = leitor.nextInt();
+				System.out.print("Informe o mes de nascimento: ");
+				int mes = leitor.nextInt();
+				System.out.print("Informe o ano de nascimento: ");
+				int ano = leitor.nextInt();
+				leitor.nextLine();
+
+				this.setDataNascimento((LocalDate.of(dia, mes, ano)));
+
+			}
+
+			System.out.print("Deseja cadastrar um novo endereço: (S/n) ");
+			if (respostaAtt.equalsIgnoreCase("S")) {
+
+				this.getEndereco().cadastrar();
+
+			}
+
+			System.out.print("Deseja cadastrar um novo telefone: (S/n) ");
+			if (respostaAtt.equalsIgnoreCase("S")) {
+
+				this.getTelsContato().cadastrar();
+
+			}
+
+		}
+
+		else {
+
+			System.out.println("Nao atualizar!");
+
+		}
+
+	}
 
     public String toString() {
         return "Cliente{" +
@@ -46,4 +101,5 @@ public class Cliente extends Pessoa{
                 ", tipoProfissaoOutros='" + tipoProfissaoOutros + '\'' +
                 "} ";
     }
+
 }

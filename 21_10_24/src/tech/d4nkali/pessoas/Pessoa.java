@@ -65,7 +65,13 @@ public class Pessoa {
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
-	
-	
+
+	public Telefone getTelsContato() {
+		return telsContato;
+	}
+
+	public void setTelsContato(Telefone telsContato) {
+		this.telsContato = telsContato;
+	}
 
 }
