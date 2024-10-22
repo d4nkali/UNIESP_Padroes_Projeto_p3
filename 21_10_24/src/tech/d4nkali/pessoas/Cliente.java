@@ -84,6 +84,31 @@ public class Cliente extends Pessoa{
 
 			}
 
+
+			System.out.println("Deseja atualizar o código do cliente? (S/N)");
+			respostaAtt = leitor.nextLine();
+			if (respostaAtt.equalsIgnoreCase("S")) {
+
+				System.out.println("Informe o novo código: ");
+				this.codigo = leitor.nextLine();
+
+			}
+
+			if (respostaAtt.equalsIgnoreCase("S")) {
+
+				System.out.println("Informe a nova profissão: ");
+				Profissao novaProfissao = Profissao.valueOf(leitor.nextLine());
+				this.setProfissao(novaProfissao);
+
+				if (novaProfissao == Profissao.OUTROS) {
+					System.out.println("Informe a nova profissão personalizada: ");
+					this.tipoProfissaoOutros = leitor.nextLine();
+				} else {
+					this.tipoProfissaoOutros = null;
+				}
+
+			}
+
 		}
 
 		else {
