@@ -6,16 +6,19 @@ import java.util.Scanner;
 
 import tech.d4nkali.composicao.Endereco;
 import tech.d4nkali.composicao.Telefone;
+import tech.d4nkali.interfaces.Cadastramento;
 
-public class Pessoa {
+public class Pessoa implements Cadastramento{
+
 	private String nome;
 	private LocalDate dataNascimento;
 	private Endereco endereco;
 	private Telefone telsContato;
 
 	private Scanner leitor = new Scanner(System.in);
-	
+
 	public void cadastrar() {
+
 		System.out.println("Informe o nome: ");
 		this.nome = leitor.nextLine();
 		System.out.println("Informe a data de nascimento! ");
@@ -30,16 +33,18 @@ public class Pessoa {
 		this.endereco.cadastrar();
 		this.telsContato = new Telefone();
 		this.telsContato.cadastrar();
-		
+
 	}
-	
+
 	public int obterIdade(){
+
 		LocalDate dataNascimento = this.dataNascimento;
 		LocalDate dataAtual = LocalDate.now();
 
 		Period periodo = Period.between(dataNascimento, dataAtual);
 
 		return periodo.getYears();
+
 	}
 
 	public String getNome() {
