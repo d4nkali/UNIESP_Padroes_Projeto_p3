@@ -29,16 +29,18 @@ public class Cliente extends Pessoa{
     }
 
     public void cadastrar() {
+
         super.cadastrar();
         System.out.println("Informe o código do cliente: ");
         this.codigo = leitor.nextLine();
         System.out.println("Informe a profissão do cliente: ");
         Profissao profissao = Profissao.valueOf(leitor.nextLine());
         if(profissao == Profissao.OUTROS){
+
             System.out.println(("Informe sua profissão: "));
             this.tipoProfissaoOutros = leitor.nextLine();
-        }
 
+        }
 
     }
 
